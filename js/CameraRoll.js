@@ -207,7 +207,10 @@ class CameraRoll {
   static getAlbums(
     params?: GetAlbumsParams = {assetType: ASSET_TYPE_OPTIONS.All},
   ): Promise<Album[]> {
-    return RNCCameraRoll.getAlbums(params);
+    const albums = RNCCameraRoll.getAlbums(params);
+
+    const sortedAlbums = albums.sort((a, b) => a.title < b.title);
+    return sortedAlbums;
   }
 
   static getParamsWithDefaults(params: GetPhotosParams): GetPhotosParams {
