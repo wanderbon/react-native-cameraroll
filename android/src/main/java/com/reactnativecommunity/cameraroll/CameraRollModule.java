@@ -441,7 +441,7 @@ public class CameraRollModule extends ReactContextBaseJavaModule {
               projection,
               selection.toString(),
               selectionArgs.toArray(new String[selectionArgs.size()]),
-              MediaStore.Images.ImageColumns.BUCKET_DISPLAY_NAME + " ASC");
+              Images.ImageColumns.DISPLAY_NAME + " ASC");
       if (media == null) {
         promise.reject(ERROR_UNABLE_TO_LOAD, "Could not get media");
       } else {
